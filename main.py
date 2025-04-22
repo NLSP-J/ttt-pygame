@@ -1,7 +1,6 @@
 import pygame as pg
 import time
 import asyncio
-clock = pg.time.Clock()
 
 pg.init()
 
@@ -25,8 +24,8 @@ running = True
 b_width = 400
 b_height = 400
 board = [['','',''],
-		 ['','',''],
-		 ['','','']]
+	 ['','',''],
+         ['','','']]
 
 x_img = pg.image.load("./assets/images/X_modified.png")
 o_img = pg.image.load("./assets/images/o_modified.png")
@@ -163,22 +162,19 @@ def check_click():
 
 
 async def main():
-    global running
+    global running, draw, winner
     game_window()
-    while running:
+    while True:
         for event in pg.event.get():
-            if event.type == pg.QUIT:
-                running = False
-            elif event.type == pg.MOUSEBUTTONDOWN:
+            if event.type == pg.MOUSEBUTTONDOWN:
                 check_click()
         if draw or winner != False:
             time.sleep(2)
-            running = False
+            break
 
         check_win()
         update_text()
-
-	clock.tick(30)
+	    
         pg.display.flip()
         await asyncio.sleep(0)
 		
