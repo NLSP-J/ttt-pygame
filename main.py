@@ -3,6 +3,7 @@ import time
 import asyncio
 
 pg.init()
+clock = pg.time.Clock()
 
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -171,6 +172,7 @@ async def main():
 		check_win()
 		update_text()
 
+		clock.tick(60)
 		pg.display.flip()
 		await asyncio.sleep(0)
 		
