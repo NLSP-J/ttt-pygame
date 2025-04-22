@@ -67,8 +67,9 @@ def game_window():
 	
 	update_text()
 
+game_window()
 async def main():
-	game_window()
+	
 	while True:
 		for event in pg.event.get():
 			if event.type == pg.QUIT:
