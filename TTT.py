@@ -1,7 +1,6 @@
 import pygame as pg
 import time
-# import asyncio
-import pygbag.aio as asyncio
+import asyncio
 
 pg.init()
 
