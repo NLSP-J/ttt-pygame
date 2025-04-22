@@ -159,6 +159,7 @@ def check_click():
 
 async def main():
 	global running
+	game_window()
 	while running:
 		game_window()
 		while running:
