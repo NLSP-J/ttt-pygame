@@ -24,8 +24,8 @@ running = True
 b_width = 400
 b_height = 400
 board = [['','',''],
-		 ['','',''],
-		 ['','','']]
+	 ['','',''],
+	 ['','','']]
 
 x_img = pg.image.load("X_modified.png")
 o_img = pg.image.load("o_modified.png")
@@ -160,9 +160,8 @@ def check_click():
 		moves += 1
 		draw_img(row,col)
 
-game_window()
-
 async def main():
+    game_window()
     while running:
         for event in pg.event.get():
             if event.type == pg.QUIT:
