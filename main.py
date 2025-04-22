@@ -158,20 +158,22 @@ def check_click():
 		draw_img(row,col)
 
 async def main():
-    game_window()
-    while running:
-        for event in pg.event.get():
-            if event.type == pg.MOUSEBUTTONDOWN:
-                check_click()
-        if draw or winner != False:
-            time.sleep(2)
-            running = False
+	while running:
+		screen.fill(white)
+    # game_window()
+    # while running:
+    #     for event in pg.event.get():
+    #         if event.type == pg.MOUSEBUTTONDOWN:
+    #             check_click()
+    #     if draw or winner != False:
+    #         time.sleep(2)
+    #         running = False
 
-        check_win()
-        update_text()
+    #     check_win()
+    #     update_text()
 
-        pg.display.flip()
-        await asyncio.sleep(0)
+		pg.display.flip()
+        	await asyncio.sleep(0)
 		
 asyncio.run(main())
 
