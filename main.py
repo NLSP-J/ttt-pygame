@@ -1,9 +1,7 @@
 import pygame as pg
-import time
 import asyncio
 
 pg.init()
-clock = pg.time.Clock()
 
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -136,20 +134,20 @@ def check_click():
 
 	x, y = pg.mouse.get_pos()
 
-	if(x < b_width / 3):
+	if (x < b_width / 3):
 		col = 1
 	elif (x < b_width / 3 * 2):
 		col = 2
-	elif(x < b_width):
+	elif (x < b_width):
 		col = 3
 	else:
 		col = 'Invalid'
 
-	if(y < b_height / 3):
+	if (y < b_height / 3):
 		row = 1
 	elif (y < b_height / 3 * 2):
 		row = 2
-	elif(y < b_height):
+	elif (y < b_height):
 		row = 3
 	else:
 		row = 'Invalid'
@@ -172,7 +170,6 @@ async def main():
         check_win()
         update_text()
 
-	clock.tick(60)
         pg.display.flip()
         await asyncio.sleep(0)
 		
