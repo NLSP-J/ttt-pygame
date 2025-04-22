@@ -24,8 +24,8 @@ winner = False
 b_width = 400
 b_height = 400
 board = [['','',''],
-		 ['','',''],
-		 ['','','']]
+	 ['','',''],
+	 ['','','']]
 
 x_img = pg.image.load("./assets/images/X_modified.png")
 o_img = pg.image.load("./assets/images/o_modified.png")
@@ -172,8 +172,8 @@ async def main():
 		check_win()
 		update_text()
 
+		pg.display.update()
 		clock.tick(60)
-		pg.display.flip()
 		await asyncio.sleep(0)
 		
 asyncio.run(main())
