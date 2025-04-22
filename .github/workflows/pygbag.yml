@@ -5,15 +5,15 @@ on: [workflow_dispatch]
 
 jobs:
   build-pygbag:
-    name: Build for Emscripten
-    runs-on: ubuntu-22.04
+    name: Build for Emscripten pygbag runtime
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Checkout
       run: |
-            python3 -m pip install --user --upgrade git+https://github.com/pygame-web/pygbag
-            python3 -m pygbag --PYBUILD 3.10 --ume_block 0 --build $GITHUB_WORKSPACE/main.py
+            python -m pip install pygbag
+            python -m pygbag --build $GITHUB_WORKSPACE/main.py
     - name : "Upload to GitHub pages branch gh-pages"
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
