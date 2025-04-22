@@ -158,6 +158,7 @@ def check_click():
 		draw_img(row,col)
 
 async def main():
+	global running
 	while running:
 		screen.fill(white)
     # game_window()
