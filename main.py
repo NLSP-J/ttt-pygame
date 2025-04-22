@@ -163,6 +163,8 @@ def check_click():
 game_window()
 
 async def main():
+    global running
+    game_window()
     while running:
         for event in pg.event.get():
             if event.type == pg.QUIT:
