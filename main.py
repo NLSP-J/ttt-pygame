@@ -1,6 +1,7 @@
 import pygame as pg
 import time
 import asyncio
+clock = pg.time.Clock()
 
 pg.init()
 
@@ -160,7 +161,6 @@ def check_click():
 		moves += 1
 		draw_img(row,col)
 
-game_window()
 
 async def main():
     global running
@@ -178,6 +178,7 @@ async def main():
         check_win()
         update_text()
 
+	clock.tick(30)
         pg.display.flip()
         await asyncio.sleep(0)
 		
