@@ -3,6 +3,7 @@ import time
 import asyncio
 
 pg.init()
+clock = pg.time.Clock()
 
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -35,9 +36,7 @@ o_img = pg.transform.scale(o_img, (80, 80))
 
 
 def update_text():
-
 	global draw, player
-
 	if draw:
 		text = "It's a draw!"
 	elif winner != False:
@@ -164,9 +163,7 @@ async def main():
     game_window()
     while running:
         for event in pg.event.get():
-            if event.type == pg.QUIT:
-                running = False
-            elif event.type == pg.MOUSEBUTTONDOWN:
+            if event.type == pg.MOUSEBUTTONDOWN:
                 check_click()
         if draw or winner != False:
             time.sleep(2)
@@ -175,6 +172,7 @@ async def main():
         check_win()
         update_text()
 
+	clock.tick(60)
         pg.display.flip()
         await asyncio.sleep(0)
 		
