@@ -49,7 +49,7 @@ def update_text():
 
 def game_window():
 
-	screen.fill(white)
+	screen.fill(pg.Color('white')
 
 	# drawing vertical lines
 	pg.draw.line(screen, black, (b_width / 3, 0),
