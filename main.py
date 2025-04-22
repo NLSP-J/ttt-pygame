@@ -161,19 +161,17 @@ async def main():
 	global running
 	game_window()
 	while running:
-		game_window()
-		while running:
-	        	for event in pg.event.get():
-	            		if event.type == pg.MOUSEBUTTONDOWN:
-	                		check_click()
-	        	if draw or winner != False:
-	            	running = False
-	
-	        	check_win()
-	        	update_text()
+		for event in pg.event.get():
+			if event.type == pg.MOUSEBUTTONDOWN:
+				check_click()
+		if draw or winner != False:
+		running = False
 
-			pg.display.flip()
-        		await asyncio.sleep(0)
+		check_win()
+		update_text()
+
+		pg.display.flip()
+		await asyncio.sleep(0)
 		
 asyncio.run(main())
 
