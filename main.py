@@ -28,8 +28,8 @@ board = [['','',''],
 		 ['','',''],
 		 ['','','']]
 
-x_img = pg.image.load("X_modified.png")
-o_img = pg.image.load("o_modified.png")
+x_img = pg.image.load("./assets/images/X_modified.png")
+o_img = pg.image.load("./assets/images/o_modified.png")
 
 x_img = pg.transform.scale(x_img, (80, 80))
 o_img = pg.transform.scale(o_img, (80, 80))
